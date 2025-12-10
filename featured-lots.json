@@ -1,0 +1,50 @@
+{
+    "_comment": "=== WEEKLY FEATURED LOTS CONFIG ===",
+    "_instructions": "Update this file weekly with your current auction items. Each lot needs: title, lotNumber, condition, image (path to local image or URL), and hibidUrl (direct link to lot on HiBid).",
+    "auctionCloseText": "Closing This Sunday",
+    "lastUpdated": "2024-12-10",
+    "lots": [
+        {
+            "title": "Apple AirPods Pro (2nd Gen)",
+            "lotNumber": "101",
+            "condition": "Open Box",
+            "image": "assets/product-1.png",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/"
+        },
+        {
+            "title": "DeWalt 20V Cordless Drill Set",
+            "lotNumber": "105",
+            "condition": "New",
+            "image": "assets/product-2.png",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/"
+        },
+        {
+            "title": "Samsung Galaxy Watch 5",
+            "lotNumber": "112",
+            "condition": "Returns",
+            "image": "assets/product-3.png",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/"
+        },
+        {
+            "title": "Ninja Professional Blender",
+            "lotNumber": "124",
+            "condition": "Open Box",
+            "image": "assets/product-1.png",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/"
+        },
+        {
+            "title": "Keurig K-Elite Coffee Maker",
+            "lotNumber": "135",
+            "condition": "New",
+            "image": "assets/product-2.png",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/"
+        },
+        {
+            "title": "Sony WH-1000XM4 Headphones",
+            "lotNumber": "148",
+            "condition": "Returns",
+            "image": "assets/product-3.png",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/"
+        }
+    ]
+}

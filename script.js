@@ -182,3 +182,79 @@ document.getElementById('signupModal').addEventListener('click', function (e) {
         closeSignupModal();
     }
 });
+
+// ===========================================
+// FEATURED LOTS SYSTEM
+// ===========================================
+// Loads weekly featured lots from featured-lots.json
+// To update weekly: Edit featured-lots.json with new lot data
+
+/**
+ * Render a single lot card
+ * @param {Object} lot - Lot data from JSON
+ * @returns {string} HTML string for the lot card
+ */
+function renderLotCard(lot) {
+    const conditionClass = lot.condition.toLowerCase().replace(/\s+/g, '-');
+
+    return `
+        <a href="${lot.hibidUrl}" target="_blank" class="gallery-item" rel="noopener">
+            <div class="condition-badge condition-${conditionClass}">${lot.condition}</div>
+            <img src="${lot.image}" alt="${lot.title}" loading="lazy">
+            <div class="gallery-info">
+                <span class="lot-number">Lot #${lot.lotNumber}</span>
+                <h4 class="lot-title">${lot.title}</h4>
+                <span class="bid-cta">Bid on HiBid →</span>
+            </div>
+        </a>
+    `;
+}
+
+/**
+ * Load and render featured lots from JSON
+ */
+async function loadFeaturedLots() {
+    const gridEl = document.getElementById('gallery-grid');
+    const fallbackEl = document.getElementById('gallery-fallback');
+
+    if (!gridEl) return;
+
+    try {
+        const response = await fetch('featured-lots.json');
+
+        if (!response.ok) {
+            throw new Error('Failed to load featured lots');
+        }
+
+        const data = await response.json();
+
+        if (!data.lots || data.lots.length === 0) {
+            // No lots defined, show fallback
+            return;
+        }
+
+        // Hide fallback
+        if (fallbackEl) {
+            fallbackEl.style.display = 'none';
+        }
+
+        // Render lot cards
+        const lotsHtml = data.lots.map(lot => renderLotCard(lot)).join('');
+        gridEl.innerHTML = lotsHtml;
+
+        // Update section title if provided
+        if (data.auctionCloseText) {
+            const titleEl = document.getElementById('auction-title');
+            if (titleEl) {
+                titleEl.textContent = data.auctionCloseText.toUpperCase() + ': GRAVITY-DEFYING DEALS!';
+            }
+        }
+
+    } catch (error) {
+        console.warn('Could not load featured lots:', error.message);
+        // Fallback content remains visible
+    }
+}
+
+// Load featured lots when DOM is ready
+document.addEventListener('DOMContentLoaded', loadFeaturedLots);

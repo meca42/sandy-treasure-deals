@@ -114,44 +114,28 @@
     </section>
 
     <!-- This Week's Auction / Gallery -->
+    <!-- Featured lots are loaded dynamically from featured-lots.json -->
+    <!-- To update weekly: Edit featured-lots.json with new lot data -->
     <section id="auction" class="section auction-gallery">
         <div class="container">
-            <h2 class="section-title">CLOSING THIS SUNDAY: GRAVITY-DEFYING DEALS!</h2>
-            <div class="gallery-grid">
-                <!-- Using placeholder logic, duplicating images to fill grid -->
-                <div class="gallery-item">
-                    <div class="badge-new">NEW</div>
-                    <img src="assets/product-1.png" alt="Wireless Headphones">
-                    <div class="gallery-info">Lot #101: High-End Audio</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="badge-bid">BID NOW</div>
-                    <img src="assets/product-2.png" alt="Coffee Maker">
-                    <div class="gallery-info">Lot #105: Kitchen Essentials</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="badge-new">NEW</div>
-                    <img src="assets/product-3.png" alt="Smart Watch">
-                    <div class="gallery-info">Lot #112: Wearable Tech</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="badge-bid">BID NOW</div>
-                    <img src="assets/product-1.png" alt="Wireless Headphones">
-                    <div class="gallery-info">Lot #124: Electronics Bundle</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="badge-new">NEW</div>
-                    <img src="assets/product-2.png" alt="Coffee Maker">
-                    <div class="gallery-info">Lot #135: Home Appliance</div>
-                </div>
-                <div class="gallery-item">
-                    <div class="badge-bid">BID NOW</div>
-                    <img src="assets/product-3.png" alt="Smart Watch">
-                    <div class="gallery-info">Lot #148: Smart Gadgets</div>
+            <div class="section-header">
+                <h2 class="section-title" id="auction-title">CLOSING THIS SUNDAY: GRAVITY-DEFYING DEALS!</h2>
+                <span class="updated-badge">Updated Weekly</span>
+            </div>
+
+            <!-- Dynamic lot cards will be inserted here -->
+            <div id="gallery-grid" class="gallery-grid">
+                <!-- Fallback content shown if JS fails or no lots -->
+                <div class="gallery-fallback" id="gallery-fallback">
+                    <p>This week's lots are being finalized.</p>
+                    <a href="https://sandytreasuredeals.hibid.com/" class="btn btn-primary">View This Week's Auction on
+                        HiBid</a>
                 </div>
             </div>
+
             <div class="center-cta">
                 <a href="https://sandytreasuredeals.hibid.com/" class="btn btn-secondary">View Full Catalog</a>
+                <p class="pickup-note"><i class="fas fa-map-marker-alt"></i> Pickup in Sanford, FL</p>
             </div>
         </div>
     </section>
