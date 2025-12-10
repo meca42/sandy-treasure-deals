@@ -42,3 +42,35 @@ function updateCountdown() {
 
 setInterval(updateCountdown, 1000);
 updateCountdown();
+
+// Signup Modal Functions
+function openSignupModal() {
+    document.getElementById('signupModal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSignupModal() {
+    document.getElementById('signupModal').classList.remove('active');
+    document.body.style.overflow = 'auto';
+}
+
+function handleSignup(event) {
+    event.preventDefault();
+    const name = document.getElementById('signupName').value;
+    const email = document.getElementById('signupEmail').value;
+    const phone = document.getElementById('signupPhone').value;
+
+    // Show success message
+    alert(`Thank you, ${name}! You've been signed up for exclusive deal alerts.`);
+
+    // Reset form and close modal
+    document.getElementById('signupForm').reset();
+    closeSignupModal();
+}
+
+// Close modal when clicking outside
+document.getElementById('signupModal').addEventListener('click', function (e) {
+    if (e.target === this) {
+        closeSignupModal();
+    }
+});
