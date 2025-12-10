@@ -15,6 +15,91 @@
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Canonical URL for SEO -->
+    <link rel="canonical" href="https://www.sandytreasuredeals.com/">
+
+    <!--
+        ============================================================
+        SCHEMA.ORG JSON-LD STRUCTURED DATA
+        ============================================================
+        This structured data helps search engines understand the business
+        and improves local SEO visibility for Sandy Treasure Deals.
+
+        TO UPDATE:
+        - Business hours: Edit openingHoursSpecification (opens/closes times)
+        - Phone/Email: Update telephone and email fields
+        - Address: Update the PostalAddress object
+        - Social links: Update the sameAs array with current URLs
+        - Logo: Update the logo URL if the file name changes
+        ============================================================
+    -->
+    <script type="application/ld+json">
+    [
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Sandy Treasure Deals",
+            "url": "https://www.sandytreasuredeals.com/",
+            "description": "Your premier source for Amazon and e-commerce overstock auctions in Central Florida. Weekly online auctions with unbeatable prices.",
+            "telephone": "+1-407-414-6031",
+            "email": "info@sandytreasuredeals.com",
+            "logo": "https://www.sandytreasuredeals.com/assets/logo.jpg",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "715 Golden Spike Ln #1009",
+                "addressLocality": "Sanford",
+                "addressRegion": "FL",
+                "postalCode": "32771",
+                "addressCountry": "US"
+            },
+            "areaServed": ["Sanford", "Lake Mary", "Oviedo", "Deltona", "Orlando", "Central Florida"],
+            "sameAs": [
+                "https://www.facebook.com/p/Sandy-Treasure-Deals-61573818310667/",
+                "https://www.instagram.com/sandytreasuredeals/",
+                "https://www.tiktok.com/@sandytreasuredeals"
+            ]
+        },
+        {
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Sandy Treasure Deals",
+            "url": "https://www.sandytreasuredeals.com/",
+            "description": "Your premier source for Amazon and e-commerce overstock auctions in Central Florida. Weekly online auctions with unbeatable prices.",
+            "telephone": "+1-407-414-6031",
+            "email": "info@sandytreasuredeals.com",
+            "logo": "https://www.sandytreasuredeals.com/assets/logo.jpg",
+            "image": "https://www.sandytreasuredeals.com/assets/logo.jpg",
+            "priceRange": "$$",
+            "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "715 Golden Spike Ln #1009",
+                "addressLocality": "Sanford",
+                "addressRegion": "FL",
+                "postalCode": "32771",
+                "addressCountry": "US"
+            },
+            "openingHoursSpecification": [
+                {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                    "opens": "09:30",
+                    "closes": "16:30"
+                }
+            ],
+            "areaServed": ["Sanford", "Lake Mary", "Oviedo", "Deltona", "Orlando", "Central Florida"],
+            "sameAs": [
+                "https://www.facebook.com/p/Sandy-Treasure-Deals-61573818310667/",
+                "https://www.instagram.com/sandytreasuredeals/",
+                "https://www.tiktok.com/@sandytreasuredeals"
+            ],
+            "parentOrganization": {
+                "@type": "Organization",
+                "name": "Sandy Treasure Deals"
+            }
+        }
+    ]
+    </script>
 </head>
 
 <body>
@@ -344,6 +429,9 @@
                     <p><i class="fas fa-map-marker-alt"></i> 715 Golden Spike Ln #1009, Sanford, FL 32771</p>
                 </a>
                 <p><i class="far fa-clock"></i> Pickup: Mon - Fri, 9:30 AM - 4:30 PM</p>
+                <p><a href="tel:+1-407-414-6031"><i class="fas fa-phone"></i> +1-407-414-6031</a></p>
+                <p><a href="mailto:info@sandytreasuredeals.com"><i class="fas fa-envelope"></i>
+                        info@sandytreasuredeals.com</a></p>
                 <div class="map-placeholder">
                     <!-- Static map placeholder -->
                     <a href="https://www.google.com/maps/place/715+Golden+Spike+Ln+%231009,+Sanford,+FL+32771"
