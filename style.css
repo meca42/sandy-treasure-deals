@@ -62,33 +62,71 @@ ul {
     letter-spacing: 1px;
 }
 
-/* Buttons */
+/* ===========================================
+   CTA HIERARCHY SYSTEM
+   ===========================================
+   Primary CTA: "Bid Now on HiBid" - Most prominent, drives main conversion
+   Secondary CTA: Supporting actions like "View Catalog", "Sign Up"
+   Tertiary CTA: Low-priority text links
+   =========================================== */
+
+/* Base Button Styles */
 .btn {
     display: inline-block;
     padding: 12px 24px;
-    border-radius: 4px;
+    border-radius: 6px;
     font-weight: 600;
     text-align: center;
     cursor: pointer;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
+/* PRIMARY CTA - Most Prominent (Bid Now on HiBid) */
 .btn-primary {
-    background-color: var(--accent-orange);
+    background: linear-gradient(135deg, var(--accent-orange) 0%, #ff8533 100%);
     color: var(--white);
-    border: 2px solid var(--accent-orange);
+    border: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    padding: 16px 32px;
+    box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+    animation: primaryPulse 2.5s ease-in-out infinite;
 }
 
 .btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 69, 0, 0.5);
+    background: linear-gradient(135deg, #ff5500 0%, #ff9955 100%);
+    color: var(--white);
 }
 
+.btn-primary:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 15px rgba(255, 69, 0, 0.3);
+}
+
+@keyframes primaryPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 6px 20px rgba(255, 69, 0, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 6px 30px rgba(255, 69, 0, 0.6);
+    }
+}
+
+/* SECONDARY CTA - Less Prominent (View Catalog, etc.) */
 .btn-secondary {
     background-color: transparent;
     border: 2px solid var(--accent-gold);
     color: var(--accent-gold);
+    font-size: 0.95rem;
+    padding: 12px 24px;
 }
 
 .btn-secondary:hover {
@@ -96,40 +134,30 @@ ul {
     color: var(--primary-color);
 }
 
-.btn-accent {
-    background-color: var(--accent-gold);
-    color: var(--primary-color);
-    font-weight: 800;
-    font-size: 1.2rem;
-    padding: 15px 30px;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-    animation: pulse 2s infinite;
+/* TERTIARY CTA - Text Link Style */
+.btn-tertiary {
+    background: none;
+    border: none;
+    color: var(--accent-gold);
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.7);
-    }
-
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(255, 215, 0, 0);
-    }
-
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 215, 0, 0);
-    }
+.btn-tertiary:hover {
+    color: var(--white);
 }
 
+/* Size Modifiers */
 .btn-large {
     padding: 18px 40px;
+    font-size: 1.2rem;
 }
 
 .btn-sm {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 10px 18px;
+    font-size: 0.85rem;
 }
 
 /* Navigation */
@@ -316,6 +344,15 @@ ul {
     font-size: 1rem;
     color: var(--text-muted);
     padding: 20px;
+}
+
+/* CTA Microcopy - Small helper text under primary CTAs */
+.cta-microcopy {
+    font-size: 0.85rem;
+    margin-top: 12px;
+    color: var(--text-muted);
+    opacity: 0.9;
+    letter-spacing: 0.5px;
 }
 
 /* Email Banner */
