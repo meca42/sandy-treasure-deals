@@ -164,15 +164,16 @@ function closeSignupModal() {
 
 function handleSignup(event) {
     event.preventDefault();
+    const name = document.getElementById('signupName').value;
     const email = document.getElementById('signupEmail').value;
-    const prefMonday = document.getElementById('prefMonday').checked;
-    const prefSunday = document.getElementById('prefSunday').checked;
+    const phone = document.getElementById('signupPhone').value;
+    const notifications = document.getElementById('prefNotifications').checked;
 
-    // Log preferences (for future backend integration)
-    console.log('Signup:', { email, prefMonday, prefSunday });
+    // Log data (for future backend integration)
+    console.log('Signup:', { name, email, phone, notifications });
 
     // Show success message
-    alert(`You're signed up for weekly auction alerts! We'll send updates to ${email}.`);
+    alert(`Thank you, ${name}! You're signed up for weekly auction alerts.`);
 
     // Reset form and close modal
     document.getElementById('signupForm').reset();

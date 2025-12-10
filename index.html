@@ -275,16 +275,18 @@
             <p class="modal-subtext">Monday preview + Sunday last-hour reminders. Never miss a deal!</p>
             <form id="signupForm" onsubmit="handleSignup(event)">
                 <div class="form-group">
-                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
+                    <input type="text" id="signupName" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="signupEmail" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="signupPhone" placeholder="Phone Number" required>
                 </div>
                 <div class="form-preferences">
                     <label class="checkbox-label">
-                        <input type="checkbox" id="prefMonday" checked>
-                        <span>Send me the Monday preview</span>
-                    </label>
-                    <label class="checkbox-label">
-                        <input type="checkbox" id="prefSunday" checked>
-                        <span>Send me Sunday last-hour reminders</span>
+                        <input type="checkbox" id="prefNotifications" checked>
+                        <span>Send me notifications to my email and text</span>
                     </label>
                 </div>
                 <button type="submit" class="btn btn-secondary btn-full">Get Auction Alerts</button>
