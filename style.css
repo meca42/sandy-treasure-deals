@@ -837,3 +837,61 @@ footer {
         font-size: 1rem;
     }
 }
+
+/* ===========================================
+   STICKY MOBILE CTA BAR
+   ===========================================
+   Only visible on mobile devices (≤768px)
+   Always stays at bottom of viewport for easy access
+   To change HiBid URL: update the href in index.html
+   =========================================== */
+
+.mobile-sticky-cta {
+    display: none;
+    /* Hidden on desktop by default */
+}
+
+@media (max-width: 768px) {
+    .mobile-sticky-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+        padding: 12px 20px;
+        padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+        /* iOS safe area */
+        z-index: 1500;
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mobile-cta-btn {
+        width: 100%;
+        text-align: center;
+        padding: 14px 24px;
+        font-size: 1rem;
+        min-height: 48px;
+        /* Minimum tap target size */
+    }
+
+    .mobile-cta-subtext {
+        font-size: 0.7rem;
+        color: var(--text-muted);
+        margin-top: 6px;
+        letter-spacing: 0.5px;
+    }
+
+    /* Add bottom padding to body so content isn't hidden behind sticky bar */
+    body {
+        padding-bottom: 90px;
+    }
+
+    /* Reduce footer bottom padding since sticky bar provides spacing */
+    footer {
+        padding-bottom: 20px;
+    }
+}
