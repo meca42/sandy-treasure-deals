@@ -8,26 +8,124 @@ if (menuToggle) {
     });
 }
 
-// Countdown Timer Logic
-function updateCountdown() {
+// Countdown Timer Logic - Timezone-Safe (Eastern Time)
+// =====================================================
+// This countdown always targets Sunday 6:00 PM Eastern Time (ET/EDT).
+// It uses Intl.DateTimeFormat to get the current time in America/New_York,
+// then calculates the target date accordingly. This approach handles DST
+// automatically because the timezone database manages the offsets.
+
+/**
+ * Get the current date/time components in Eastern Time
+ * @returns {Object} { year, month, day, hour, minute, second, dayOfWeek }
+ */
+function getEasternTimeComponents() {
     const now = new Date();
-    const currentDay = now.getDay(); // 0 is Sunday
 
-    // Target: Next Sunday at 6:00 PM (18:00)
-    let target = new Date(now);
-    target.setHours(18, 0, 0, 0);
+    // Format current time in Eastern timezone
+    const formatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        weekday: 'short',
+        hour12: false
+    });
 
-    if (currentDay === 0 && now.getHours() >= 18) {
-        // It's past 6PM on Sunday, target next Sunday
-        target.setDate(now.getDate() + 7);
-    } else {
-        // Calc days until Sunday (0)
-        let daysUntilSunday = 0 - currentDay;
-        if (daysUntilSunday < 0) daysUntilSunday += 7;
-        target.setDate(now.getDate() + daysUntilSunday);
+    const parts = formatter.formatToParts(now);
+    const getValue = (type) => parts.find(p => p.type === type)?.value;
+
+    const dayMap = { 'Sun': 0, 'Mon': 1, 'Tue': 2, 'Wed': 3, 'Thu': 4, 'Fri': 5, 'Sat': 6 };
+
+    return {
+        year: parseInt(getValue('year')),
+        month: parseInt(getValue('month')),
+        day: parseInt(getValue('day')),
+        hour: parseInt(getValue('hour')),
+        minute: parseInt(getValue('minute')),
+        second: parseInt(getValue('second')),
+        dayOfWeek: dayMap[getValue('weekday')]
+    };
+}
+
+/**
+ * Calculate the next Sunday 6:00 PM ET as a UTC timestamp
+ * @returns {number} Unix timestamp in milliseconds
+ */
+function getNextAuctionClose() {
+    const et = getEasternTimeComponents();
+
+    // Calculate days until next Sunday
+    let daysUntilSunday = (7 - et.dayOfWeek) % 7;
+
+    // If it's Sunday, check if we're past 6PM
+    if (et.dayOfWeek === 0) {
+        if (et.hour >= 18) {
+            // Past 6PM Sunday, target next week
+            daysUntilSunday = 7;
+        } else {
+            // Before 6PM Sunday, target today
+            daysUntilSunday = 0;
+        }
     }
 
+    // Build the target date string in ET
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + daysUntilSunday);
+
+    // Get the target Sunday's date in ET
+    const targetFormatter = new Intl.DateTimeFormat('en-US', {
+        timeZone: 'America/New_York',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit'
+    });
+
+    const targetParts = targetFormatter.formatToParts(targetDate);
+    const getTargetValue = (type) => targetParts.find(p => p.type === type)?.value;
+
+    const targetYear = getTargetValue('year');
+    const targetMonth = getTargetValue('month');
+    const targetDay = getTargetValue('day');
+
+    // Create a date string for Sunday 6PM ET and convert to UTC
+    // We use a trick: create the date as if it's in ET, then convert
+    const targetString = `${targetYear}-${targetMonth}-${targetDay}T18:00:00`;
+
+    // Get UTC offset for the target date in America/New_York
+    const tempDate = new Date(targetString + 'Z');
+    const etOffset = getETOffset(tempDate);
+
+    // The target time in UTC = ET time + offset (offset is negative for behind UTC)
+    return new Date(targetString + 'Z').getTime() - (etOffset * 60 * 1000);
+}
+
+/**
+ * Get the UTC offset in minutes for Eastern Time at a given date
+ * (Handles DST automatically)
+ */
+function getETOffset(date) {
+    const utcString = date.toLocaleString('en-US', { timeZone: 'UTC' });
+    const etString = date.toLocaleString('en-US', { timeZone: 'America/New_York' });
+    const utcDate = new Date(utcString);
+    const etDate = new Date(etString);
+    return (etDate - utcDate) / (60 * 1000);
+}
+
+function updateCountdown() {
+    const now = Date.now();
+    const target = getNextAuctionClose();
     const diff = target - now;
+
+    // Ensure we never show negative values
+    if (diff <= 0) {
+        // Auction just closed, recalculate for next week
+        setTimeout(updateCountdown, 1000);
+        return;
+    }
 
     const d = Math.floor(diff / (1000 * 60 * 60 * 24));
     const h = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -38,6 +136,16 @@ function updateCountdown() {
     document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
     document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
     document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+
+    // Show the countdown (hide fallback)
+    const countdownEl = document.getElementById('countdown');
+    if (countdownEl) {
+        countdownEl.style.display = 'flex';
+    }
+    const fallbackEl = document.getElementById('countdown-fallback');
+    if (fallbackEl) {
+        fallbackEl.style.display = 'none';
+    }
 }
 
 setInterval(updateCountdown, 1000);
