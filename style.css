@@ -436,6 +436,35 @@ ul {
     color: var(--accent-gold);
 }
 
+.testimonial-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.testimonial-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.testimonial-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-info .author {
+    margin-bottom: 2px;
+}
+
+.stars {
+    color: #ffc107;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
 /* Footer */
 footer {
     background-color: #050e1c;
