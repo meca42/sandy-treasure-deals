@@ -355,6 +355,94 @@ ul {
     letter-spacing: 0.5px;
 }
 
+/* ===========================================
+   TRUST CUES & CREDIBILITY ELEMENTS
+   =========================================== */
+
+/* Location Badge - Near hero headline */
+.location-badge {
+    display: inline-block;
+    background: rgba(255, 111, 32, 0.15);
+    color: var(--accent-gold);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 10px;
+}
+
+.location-badge i {
+    margin-right: 6px;
+}
+
+/* Trust Strip - Fast-scanning credibility cues */
+.trust-strip {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trust-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.trust-item i {
+    color: var(--accent-gold);
+    font-size: 1rem;
+}
+
+/* Process Confidence Notes */
+.process-confidence {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 8px;
+}
+
+.process-confidence p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin: 0;
+}
+
+.process-confidence i {
+    color: var(--accent-gold);
+}
+
+@media (max-width: 768px) {
+    .trust-strip {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .process-confidence {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .process-confidence p {
+        justify-content: center;
+    }
+}
+
 /* Email Banner */
 .email-banner {
     background-color: var(--secondary-color);
