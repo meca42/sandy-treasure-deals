@@ -101,8 +101,11 @@
     <!-- Email Capture Banner -->
     <section class="email-banner">
         <div class="container">
-            <p>Don't Miss Out! Get a Preview of Next Week's Deals!</p>
-            <a href="#" class="btn btn-secondary" onclick="openSignupModal(); return false;">SIGN UP & SAVE</a>
+            <div class="email-banner-content">
+                <h3><i class="fas fa-bell"></i> Get Weekly Auction Alerts</h3>
+                <p>Monday preview + Sunday last-hour reminders</p>
+            </div>
+            <a href="#" class="btn btn-secondary" onclick="openSignupModal(); return false;">Get Auction Alerts</a>
         </div>
     </section>
 
@@ -268,19 +271,25 @@
     <div id="signupModal" class="modal-overlay">
         <div class="modal-content">
             <button class="modal-close" onclick="closeSignupModal()">&times;</button>
-            <h2>Get Exclusive Deal Alerts!</h2>
-            <p>Be the first to know about our weekly auctions and special offers.</p>
+            <h2><i class="fas fa-bell"></i> Get Weekly Auction Alerts</h2>
+            <p class="modal-subtext">Monday preview + Sunday last-hour reminders. Never miss a deal!</p>
             <form id="signupForm" onsubmit="handleSignup(event)">
                 <div class="form-group">
-                    <input type="text" id="signupName" placeholder="Your Name" required>
+                    <input type="email" id="signupEmail" placeholder="Enter your email" required>
                 </div>
-                <div class="form-group">
-                    <input type="email" id="signupEmail" placeholder="Email Address" required>
+                <div class="form-preferences">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="prefMonday" checked>
+                        <span>Send me the Monday preview</span>
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="prefSunday" checked>
+                        <span>Send me Sunday last-hour reminders</span>
+                    </label>
                 </div>
-                <div class="form-group">
-                    <input type="tel" id="signupPhone" placeholder="Phone Number" required>
-                </div>
-                <button type="submit" class="btn btn-accent">SIGN UP NOW</button>
+                <button type="submit" class="btn btn-secondary btn-full">Get Auction Alerts</button>
+                <p class="privacy-note"><i class="fas fa-lock"></i> No spam. Unsubscribe anytime.</p>
+                <p class="local-note">Best for Sanford / Central FL deal hunters</p>
             </form>
         </div>
     </div>
