@@ -1079,8 +1079,8 @@ footer {
     }
 
     .hero {
-        padding-top: 70px;
-        min-height: 500px;
+        padding-top: 100px;
+        min-height: 100dvh;
     }
 
     .hero-headline {
