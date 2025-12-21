@@ -2,49 +2,49 @@
     "_comment": "=== WEEKLY FEATURED LOTS CONFIG ===",
     "_instructions": "Update this file weekly with your current auction items. Each lot needs: title, lotNumber, condition, image (path to local image or URL), and hibidUrl (direct link to lot on HiBid).",
     "auctionCloseText": "Closing This Sunday",
-    "lastUpdated": "2025-12-10",
+    "lastUpdated": "2025-12-21",
     "lots": [
         {
-            "title": "K6 PC Case - Pre-installed 6 PWM ARGB Fans",
-            "lotNumber": "2",
+            "title": "Zumimall Security Cameras Wireless Outdoor",
+            "lotNumber": "196",
             "condition": "Open Box",
-            "image": "https://cdn.hibid.com/img.axd?id=8259904503&wid=&rwl=false&p=&ext=&w=1600&h=1200&t=&lp=&c=true&wt=false&checksum=Mp1P83asn10oOzQTFcVwupupPP5s5gFe",
-            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/277559821/k6-pc-case---pre-installed-6-pwm-argb-fa?ref=catalog"
+            "image": "assets/lot-196.jpg",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/278421055/zumimall-security-cameras-wireless-outdo?ref=catalog"
         },
         {
-            "title": "Apple AirPods Pro (2nd Generation)",
-            "lotNumber": "119",
+            "title": "Samsung Galaxy Buds3 Pro - Silver",
+            "lotNumber": "225",
             "condition": "Like New",
-            "image": "https://cdn.hibid.com/img.axd?id=8259908890&wid=&rwl=false&p=&ext=&w=1600&h=1200&t=&lp=&c=true&wt=false&checksum=dGZGuIKg48%2fjJEhDmRfmoPkCl4bDQLNa",
-            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/277559941/apple-airpods-pro--2nd-generation----lig?ref=catalog"
+            "image": "assets/lot-225.jpg",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/278421084/samsung-r630-galaxy-buds3-pro--silver--r?ref=catalog"
         },
         {
-            "title": "Vibration Plate (Dark Gray)",
-            "lotNumber": "231",
-            "condition": "Open Box",
-            "image": "https://cdn.hibid.com/img.axd?id=8259931743&wid=&rwl=false&p=&ext=&w=1600&h=1200&t=&lp=&c=true&wt=false&checksum=wAaWkU9WH2R3XxHSDeYrJa9eMHmeu0pf",
-            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/277560053/vibration-plate-darkgray?ref=catalog"
+            "title": "Pop Mart The Monsters Let's Checkmate",
+            "lotNumber": "389",
+            "condition": "Like New",
+            "image": "assets/lot-389.jpg",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/278421248/pop-mart-the-monsters-lets-checkmate-se?ref=catalog"
         },
         {
-            "title": "Petbobi Dog Wagon Stroller",
-            "lotNumber": "272",
+            "title": "Ropvacnic Robot Vacuum Cleaner",
+            "lotNumber": "418",
             "condition": "Open Box",
-            "image": "https://cdn.hibid.com/img.axd?id=8259933107&wid=&rwl=false&p=&ext=&w=1600&h=1200&t=&lp=&c=true&wt=false&checksum=DWYWd9CN9qzVYYd9UV0gLzJM9vZ4wZWQ",
-            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/277560094/petbobi-dog-wagon-stroller-for-large-and-m?ref=catalog"
+            "image": "assets/lot-418.jpg",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/278421277/ropvacnic-robot-vacuum-cleaner-robot-vac?ref=catalog"
         },
         {
-            "title": "Cigar Humidor - Desktop",
-            "lotNumber": "314",
+            "title": "PYD Life 120V Auto Heat Press Machine",
+            "lotNumber": "547",
             "condition": "Open Box",
-            "image": "https://cdn.hibid.com/img.axd?id=8259935191&wid=&rwl=false&p=&ext=&w=1600&h=1200&t=&lp=&c=true&wt=false&checksum=zkS%2b48ROHQBhin9HaslqR7OSZ38cZ5GZ",
-            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/277560136/cigar-humidor--desktop-humid?ref=catalog"
+            "image": "assets/lot-547.jpg",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/278421406/pyd-life-120-v-auto-heat-press-machine-f?ref=catalog"
         },
         {
-            "title": "Professional Audio Mixer - 6 Channel",
-            "lotNumber": "390",
+            "title": "XXL 40x14 Electric Warming Trays",
+            "lotNumber": "602",
             "condition": "Open Box",
-            "image": "https://cdn.hibid.com/img.axd?id=8259937880&wid=&rwl=false&p=&ext=&w=1600&h=1200&t=&lp=&c=true&wt=false&checksum=ueV2mcoIqB5pFnL7Ze01YRxVNFJxYax4",
-            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/277560212/professional-audio-mixer--6-channel-mixe?ref=catalog"
+            "image": "assets/lot-602.jpg",
+            "hibidUrl": "https://sandytreasuredeals.hibid.com/lot/278421461/xxl-40-x-14--electric-warming-trays-for?ref=catalog"
         }
     ]
 }
